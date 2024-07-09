@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Gallery</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <section class="sub-header">
+    <nav>
+      <a href="index.html"><img src="img/logo.png" alt="Logo"></a>
+      <div class="nav-links" id="NavLinks">
+        <i class="fa fa-times" onclick="hideMenu()"></i>
+        <ul>
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="about.html">PORTFOLIO</a></li>
+          <li><a href="contactUs.html">CONTACT US</a></li>
+        </ul>
+      </div>
+      <i class="fa fa-bars" onclick="showMenu()"></i>
+    </nav>
+    <h1>Welcome to Our Video Gallery</h1>
+  </section>
+
+  <section class="video-gallery">
+    <div class="video-container">
+      <div class="video-item current"> <iframe src="https://www.youtube.com/embed/video1" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <div class="video-item">
+        <iframe src="https://www.youtube.com/embed/video2" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <div class="video-item">
+        <iframe src="https://www.youtube.com/embed/video3" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <button class="prev-btn" onclick="prevVideo()"><i class="fa fa-chevron-left"></i></button>
+      <button class="next-btn" onclick="nextVideo()"><i class="fa fa-chevron-right"></i></button>
+    </div>
+  </section>
+
+  <section class="footer">
+    <h4>About Us</h4>
+    <p>Thank you for visiting our video gallery. Stay connected with us on social media.</p>
+    <div class="icons">
+      <a href="#" class="fa fa-facebook"></a>
+      <a href="#" class="fa fa-instagram"></a>
+      <a href="#" class="fa fa-linkedin"></a>
+      <a href="#" class="fa fa-twitter"></a>
+    </div>
+    <p>Made with <i class="fa fa-heart-o"></i> by Sowndarya</p>
+  </section>
+
+  <script>
+    function showMenu() {
+      document.getElementById("NavLinks").style.right = "0";
+    }
+    function hideMenu() {
+      document.getElementById("NavLinks").style.right = "-200px";
+    }
+
+    var currentVideo = 0; // Track current video index
+    var videoItems = document.querySelectorAll('.video-item'); // Get all video items
+
+    function nextVideo() {
+      if (currentVideo < videoItems.length - 1) {
+        currentVideo++;
+        animateSlide(currentVideo);
+      }
+    }
+
+    function prevVideo() {
+      if (currentVideo > 0) {
+        currentVideo--;
+        animateSlide(currentVideo);
+      }
+    }
+
+    function animateSlide(index) {
+      videoItems.forEach((item, i) => {
+        item.classList.remove('current'); // Remove current class from all videos
+        if (i === index) {
+          item.classList.add('current'); // Add current class to the active video
+        }
+      });
+    }
+  </script>
+</body>
+</html>
