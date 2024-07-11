@@ -8,11 +8,40 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    .video-container {
+      position: relative;
+      width: 80%;
+      margin: auto;
+    }
+    .video-item {
+      display: none;
+    }
+    .video-item.current {
+      display: block;
+    }
+    .prev-btn, .next-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+    }
+    .prev-btn {
+      left: 0;
+    }
+    .next-btn {
+      right: 0;
+    }
+  </style>
 </head>
 <body>
   <section class="sub-header">
     <nav>
-      <a href="index.html"><img src="img/logo.png" alt="Logo"></a>
+      <a href="index.html"><img src="logo.png" alt="Logo"></a>
       <div class="nav-links" id="NavLinks">
         <i class="fa fa-times" onclick="hideMenu()"></i>
         <ul>
@@ -26,20 +55,27 @@
     <h1>Welcome to Our Video Gallery</h1>
   </section>
 
-  <section class="video-gallery">
-    <div class="video-container">
-      <div class="video-item current"> <iframe src="https://www.youtube.com/watch?v=towgMkXEU9o&t=7s" frameborder="0" allowfullscreen></iframe>
-      </div>
-      <div class="video-item">
-        <iframe src="https://www.youtube.com/watch?v=rLOXFwJEngE&t=22s" frameborder="0" allowfullscreen></iframe>
-      </div>
-      <div class="video-item">
-        <iframe src="https://www.youtube.com/watch?v=IoAbSXICnDU" frameborder="0" allowfullscreen></iframe>
-      </div>
-      <button class="prev-btn" onclick="prevVideo()"><i class="fa fa-chevron-left"></i></button>
-      <button class="next-btn" onclick="nextVideo()"><i class="fa fa-chevron-right"></i></button>
-    </div>
-  </section>
+   <section class="video-gallery">
+        <div class="video-container">
+            <div class="video-item current">
+                <iframe width="550" height="310" src="https://www.youtube.com/embed/IoAbSXICnDU" title="Discovering Edmonton&#39;s Anime Paradise. Animethon 2023" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+			<div class="video-item current">
+               <iframe width="361" height="642" src="https://www.youtube.com/embed/qstEuZv4ods" title="Instagram Ad 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <div class="video-item">
+                <iframe width="928" height="522" src="https://www.youtube.com/embed/towgMkXEU9o" title="Homemade Formula One Car Is A Roller - Pt 13" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <div class="video-item">
+                <iframe width="550" height="310" src="https://www.youtube.com/embed/u7dacTu4i7w" title="Intro LLama" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+			<div class = "video-item">
+			<iframe width="360" height="202" src="https://www.youtube.com/embed/RlUwrPU1-sM" title="Formula Suspension In Homemade Formula One Cart - Pt 12" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+			</div>
+            <button class="prev-btn" onclick="prevVideo()"><i class="fa fa-chevron-left"></i></button>
+            <button class="next-btn" onclick="nextVideo()"><i class="fa fa-chevron-right"></i></button>
+        </div>
+    </section>
 
   <section class="footer">
     <h4>About Us</h4>
